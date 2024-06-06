@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:teachbear/pages/chat_page.dart';
+import 'package:teachbear/pages/signup_page.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -26,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(left: 40),
                   child: Text(
                     'Войти',
                     style: TextStyle(
@@ -141,50 +144,19 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 10),
             // Add space before login button
-            Container(
-              alignment: Alignment.topRight,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, // Transparent background color
-                  elevation: 0, // Remove elevation
-                  minimumSize: Size(300, 50), // Set button size
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10), // Rounded corners
-                  ),
-                  shadowColor: Colors.transparent,
-                ),
-                child: Text(
-                  'Забыли пароль?',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Theme.of(context).colorScheme.primary, // Use primary color from theme for text color
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 100),
             // Login button
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginPage(),
+                    builder: (context) => ChatPage(),
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(300, 50),
+                minimumSize: Size(350, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -196,6 +168,97 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Helvetica',
                   color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.grey, // changed color to blueAccent
+                      indent: 20,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      "или",
+                      style: TextStyle(fontSize: 16, fontFamily: 'Helvetica', color: Theme.of(context).colorScheme.primary), // changed font size to 24 and font family to Montserrat
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.grey, // changed color to blueAccent
+                      endIndent: 20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 100, // set the width to 40 pixels
+                  child: IconButton(
+                    icon: Icon(FontAwesomeIcons.google),
+                    onPressed: () {
+                      // Handle Google login
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 100, // set the width to 40 pixels
+                  child: IconButton(
+                    icon: Icon(FontAwesomeIcons.vk),
+                    onPressed: () {
+                      // Handle Facebook login
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 100, // set the width to 40 pixels
+                  child: IconButton(
+                    icon: Icon(FontAwesomeIcons.yandex),
+                    onPressed: () {
+                      // Handle Yandex login
+                    },
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 50),
+            Text(
+              'У вас нет аккаунта?',
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Theme.of(context).colorScheme.primary,
+                fontFamily: "Helvetica",
+              ),
+            ),
+            Container(
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignupPage(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Зарегистрироваться?',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Helvetica",
+                    color: Theme.of(context).colorScheme.primary, // Use primary color from theme for text color
+                  ),
                 ),
               ),
             ),

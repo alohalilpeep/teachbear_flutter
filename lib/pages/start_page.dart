@@ -53,7 +53,7 @@ class StartPage extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                    minimumSize: Size(300, 50),
+                    minimumSize: Size(350, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -83,7 +83,7 @@ class StartPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent, // Transparent background color
                     elevation: 0, // Remove elevation
-                    minimumSize: Size(300, 50), // Set button size
+                    minimumSize: Size(350, 50), // Set button size
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10), // Rounded corners
                     ),
