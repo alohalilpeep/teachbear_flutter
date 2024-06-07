@@ -19,8 +19,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      body: Align(
-        alignment: Alignment.topCenter,
+      body: Expanded(
         child: Column(
           children: [
             // Login title
@@ -43,12 +42,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             // Add space between title and input fields
-
             // Email input field
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 style: TextStyle(
                   fontSize: 16,
@@ -90,16 +88,16 @@ class _LoginPageState extends State<LoginPage> {
             Divider(
               thickness: 1, // толщина полоски
               color: Colors.grey, // цвет полоски
-              indent: 40, // отступ слева
-              endIndent: 40, // отступ справа
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             // Add space between email and password input fields
 
             // Password input field
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 obscureText: _obscureText, // Hide or show the password
                 decoration: InputDecoration(
@@ -139,10 +137,10 @@ class _LoginPageState extends State<LoginPage> {
             Divider(
               thickness: 1, // толщина полоски
               color: Colors.grey, // цвет полоски
-              indent: 40, // отступ слева
-              endIndent: 40, // отступ справа
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            SizedBox(height: 10),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             // Add space before login button
             // Login button
             ElevatedButton(
@@ -156,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(350, 50),
+                minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -180,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Divider(
                       thickness: 1,
                       color: Colors.grey, // changed color to blueAccent
-                      indent: 20,
+                      indent: MediaQuery.of(context).size.width * 0.1,
                     ),
                   ),
                   Padding(
@@ -194,18 +192,18 @@ class _LoginPageState extends State<LoginPage> {
                     child: Divider(
                       thickness: 1,
                       color: Colors.grey, // changed color to blueAccent
-                      endIndent: 20,
+                      endIndent: MediaQuery.of(context).size.width * 0.1,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 100, // set the width to 40 pixels
+                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
                   child: IconButton(
                     icon: Icon(FontAwesomeIcons.google),
                     onPressed: () {
@@ -214,7 +212,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  width: 100, // set the width to 40 pixels
+                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
                   child: IconButton(
                     icon: Icon(FontAwesomeIcons.vk),
                     onPressed: () {
@@ -223,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  width: 100, // set the width to 40 pixels
+                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
                   child: IconButton(
                     icon: Icon(FontAwesomeIcons.yandex),
                     onPressed: () {
@@ -233,7 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            SizedBox(height: 50),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.04),
             Text(
               'У вас нет аккаунта?',
               style: TextStyle(

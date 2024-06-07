@@ -18,8 +18,7 @@ class _SignupPageState extends State<SignupPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      body: Align(
-        alignment: Alignment.topCenter,
+      body: Expanded(
         child: Column(
           children: [
             // Login title
@@ -42,9 +41,9 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 style: TextStyle(
                   fontSize: 16,
@@ -55,7 +54,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
-                    Icons.account_circle,
+                    Icons.email,
                     color: Theme
                         .of(context)
                         .colorScheme
@@ -80,11 +79,11 @@ class _SignupPageState extends State<SignupPage> {
               indent: 40, // отступ слева
               endIndent: 40, // отступ справа
             ),
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between title and input fields
             // Email input field
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 style: TextStyle(
                   fontSize: 16,
@@ -126,16 +125,16 @@ class _SignupPageState extends State<SignupPage> {
             Divider(
               thickness: 1, // толщина полоски
               color: Colors.grey, // цвет полоски
-              indent: 40, // отступ слева
-              endIndent: 40, // отступ справа
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between email and password input fields
 
             // Password input field
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 obscureText: _obscureText, // Hide or show the password
                 decoration: InputDecoration(
@@ -175,12 +174,12 @@ class _SignupPageState extends State<SignupPage> {
             Divider(
               thickness: 1, // толщина полоски
               color: Colors.grey, // цвет полоски
-              indent: 40, // отступ слева
-              endIndent: 40, // отступ справа
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             SizedBox(
-              width: 370,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
                 obscureText: _obscureText, // Hide or show the password
                 decoration: InputDecoration(
@@ -220,11 +219,11 @@ class _SignupPageState extends State<SignupPage> {
             Divider(
               thickness: 1, // толщина полоски
               color: Colors.grey, // цвет полоски
-              indent: 40, // отступ слева
-              endIndent: 40, // отступ справа
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
             // Add space before login button
-            SizedBox(height: 60),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             // Login button
             ElevatedButton(
               onPressed: () {
@@ -237,7 +236,7 @@ class _SignupPageState extends State<SignupPage> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(350, 50),
+                minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -252,7 +251,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -281,7 +280,7 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
