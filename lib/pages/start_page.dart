@@ -20,7 +20,7 @@ class StartPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: Image.asset('assets/logo.png'),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01),
+                SizedBox(height: MediaQuery.of(context).size.height*0.03),
                 Text(
                   'TeachBear',
                   style: TextStyle(
@@ -34,6 +34,7 @@ class StartPage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: MediaQuery.of(context).size.height*0.03),
           Column(
             children: [
               ElevatedButton(
@@ -91,7 +92,7 @@ class StartPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: MediaQuery.of(context).size.height*0.1),
+          SizedBox(height: MediaQuery.of(context).size.height*0.05),
         ],
       ),
     );

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:teachbear/pages/chat_page.dart';
-import 'package:teachbear/pages/pass_recovery_1.dart';
-import 'package:teachbear/pages/signup_page.dart';
-class LoginPage extends StatefulWidget {
+class PassRecovery3 extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _PassRecovery3 createState() => _PassRecovery3();
 }
-class _LoginPageState extends State<LoginPage> {
+class _PassRecovery3 extends State<PassRecovery3> {
   bool _obscureText = true;
 
   @override
@@ -25,13 +22,12 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             // Login title
             Container(
-              margin: const EdgeInsets.only(top: 20),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 40),
                   child: Text(
-                    'Войти',
+                    'Изменение пароля',
                     style: TextStyle(
                       fontSize: 35.0,
                       fontWeight: FontWeight.w600,
@@ -43,57 +39,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between title and input fields
             // Email input field
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.8,
-              child: TextField(
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Theme
-                      .of(context)
-                      .colorScheme
-                      .primary,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                  ),
-                  labelText: 'Email',
-                  labelStyle: TextStyle(
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  hintText: 'example@example.com',
-                  hintStyle: TextStyle(
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            Divider(
-              thickness: 1, // толщина полоски
-              color: Colors.grey, // цвет полоски
-              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
-              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
-            ),
 
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between email and password input fields
 
             // Password input field
@@ -109,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         .colorScheme
                         .primary,
                   ),
-                  labelText: 'Пароль',
+                  labelText: 'Новый пароль',
                   labelStyle: TextStyle(
                     color: Theme
                         .of(context)
@@ -141,30 +92,53 @@ class _LoginPageState extends State<LoginPage> {
               indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.4), // Отступ справа 16 пикселей
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PassRecovery1(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Забыли пароль?',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "Helvetica",
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: TextField(
+                obscureText: _obscureText, // Hide or show the password
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.password_sharp,
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                  ),
+                  labelText: 'Подтвердите пароль',
+                  labelStyle: TextStyle(
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  border: InputBorder.none,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off),
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
                   ),
                 ),
               ),
             ),
-
+            Divider(
+              thickness: 1, // толщина полоски
+              color: Colors.grey, // цвет полоски
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
+            ),
+            // Add space before login button
+            SizedBox(height: MediaQuery.of(context).size.height * 0.35),
             // Login button
             ElevatedButton(
               onPressed: () {
@@ -183,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               child: Text(
-                'Войти',
+                'Далее',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -192,89 +166,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.grey, // changed color to blueAccent
-                      indent: MediaQuery.of(context).size.width * 0.1,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      "или",
-                      style: TextStyle(fontSize: 16, fontFamily: 'Helvetica', color: Theme.of(context).colorScheme.primary), // changed font size to 24 and font family to Montserrat
-                    ),
-                  ),
-                  Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.grey, // changed color to blueAccent
-                      endIndent: MediaQuery.of(context).size.width * 0.1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.google),
-                    onPressed: () {
-                      // Handle Google login
-                    },
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.vk),
-                    onPressed: () {
-                      // Handle Facebook login
-                    },
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.yandex),
-                    onPressed: () {
-                      // Handle Yandex login
-                    },
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
-            Text(
-              'У вас нет аккаунта?',
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Theme.of(context).colorScheme.primary,
-                fontFamily: "Helvetica",
-              ),
-            ),
             Container(
               child: MaterialButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupPage(),
+                      builder: (context) => ChatPage(),
                     ),
                   );
                 },
                 child: Text(
-                  'Зарегистрироваться?',
+                  'Отправить код заново',
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: "Helvetica",

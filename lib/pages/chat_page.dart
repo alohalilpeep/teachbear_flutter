@@ -22,7 +22,15 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat'),
+        title: Text('Математика'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.calculate, size: 36),
+            onPressed: () {
+              // Handle the icon press here.
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -48,8 +56,9 @@ class _ChatPageState extends State<ChatPage> {
                   child: TextField(
                     controller: _textController,
                     onSubmitted: (value) => _sendMessage(),
-                    decoration: InputDecoration.collapsed(
+                    decoration: InputDecoration(
                       hintText: 'Send a message',
+                      contentPadding: EdgeInsets.only(left: 16), // Add this line
                     ),
                   ),
                 ),
@@ -59,7 +68,7 @@ class _ChatPageState extends State<ChatPage> {
                 )
               ],
             ),
-          ),
+          )
         ],
       ),
     );

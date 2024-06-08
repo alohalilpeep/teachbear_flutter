@@ -23,7 +23,6 @@ class _SignupPageState extends State<SignupPage> {
           children: [
             // Login title
             Container(
-              margin: const EdgeInsets.only(top: 20),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
@@ -31,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
                   child: Text(
                     'Зарегстрироваться',
                     style: TextStyle(
-                      fontSize: 35.0,
+                      fontSize: 30.0,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Helvetica',
                       color: Color.fromRGBO(162, 132, 94, 1.00),
