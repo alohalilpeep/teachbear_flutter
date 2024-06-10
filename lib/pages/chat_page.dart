@@ -22,7 +22,9 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Математика'),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Color.fromRGBO(31, 31, 31, 1) // темная тема
+            : Colors.white, // светлая тема        title: Text('Математика'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.calculate, size: 36),

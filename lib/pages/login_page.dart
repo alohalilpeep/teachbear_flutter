@@ -18,7 +18,9 @@ class _LoginPageState extends State<LoginPage> {
           .colorScheme
           .surface,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Color.fromRGBO(31, 31, 31, 1) // темная тема
+            : Colors.white, // светлая тема
       ),
       body: Expanded(
         child: Column(

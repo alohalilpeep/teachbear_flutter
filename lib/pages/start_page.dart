@@ -63,7 +63,7 @@ class StartPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height*0.03),
+              SizedBox(height: MediaQuery.of(context).size.height*0.01),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(

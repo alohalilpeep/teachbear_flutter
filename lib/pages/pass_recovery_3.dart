@@ -15,7 +15,9 @@ class _PassRecovery3 extends State<PassRecovery3> {
           .colorScheme
           .surface,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Color.fromRGBO(31, 31, 31, 1) // темная тема
+            : Colors.white, // светлая тема
       ),
       body: Expanded(
         child: Column(
@@ -27,7 +29,7 @@ class _PassRecovery3 extends State<PassRecovery3> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 40),
                   child: Text(
-                    'Изменение пароля',
+                    'Изменение\nпароля',
                     style: TextStyle(
                       fontSize: 35.0,
                       fontWeight: FontWeight.w600,
@@ -35,6 +37,7 @@ class _PassRecovery3 extends State<PassRecovery3> {
                       color: Color.fromRGBO(162, 132, 94, 1.00),
                       letterSpacing: -2.0,
                     ),
+                    softWrap: true,
                   ),
                 ),
               ),
@@ -138,7 +141,7 @@ class _PassRecovery3 extends State<PassRecovery3> {
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
             // Add space before login button
-            SizedBox(height: MediaQuery.of(context).size.height * 0.35),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.25),
             // Login button
             ElevatedButton(
               onPressed: () {
