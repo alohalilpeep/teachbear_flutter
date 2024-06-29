@@ -1,13 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:teachbear/pages/chat_page.dart';
-import 'package:teachbear/pages/pass_recovery_1.dart';
-import 'package:teachbear/pages/signup_page.dart';
-class LoginPage extends StatefulWidget {
+
+import '../bottom_navigation_bar.dart';
+class SignupPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignupPageState createState() => _SignupPageState();
 }
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   bool _obscureText = true;
 
   @override
@@ -27,15 +28,14 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             // Login title
             Container(
-              margin: const EdgeInsets.only(top: 20),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 40),
                   child: Text(
-                    'Войти',
+                    'Зарегстрироваться',
                     style: TextStyle(
-                      fontSize: 35.0,
+                      fontSize: 30.0,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Helvetica',
                       color: Color.fromRGBO(162, 132, 94, 1.00),
@@ -45,7 +45,45 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: TextField(
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Theme
+                      .of(context)
+                      .colorScheme
+                      .primary,
+                ),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                  ),
+                  labelText: 'Имя',
+                  labelStyle: TextStyle(
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Divider(
+              thickness: 1, // толщина полоски
+              color: Colors.grey, // цвет полоски
+              indent: 40, // отступ слева
+              endIndent: 40, // отступ справа
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between title and input fields
             // Email input field
             SizedBox(
@@ -95,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
 
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between email and password input fields
 
             // Password input field
@@ -143,49 +181,66 @@ class _LoginPageState extends State<LoginPage> {
               indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.4), // Отступ справа 16 пикселей
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PassRecovery1(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Забыли пароль?',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "Helvetica",
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: TextField(
+                obscureText: _obscureText, // Hide or show the password
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.password_sharp,
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                  ),
+                  labelText: 'Подтвердите пароль',
+                  labelStyle: TextStyle(
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  border: InputBorder.none,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off),
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
                   ),
                 ),
               ),
             ),
-
+            Divider(
+              thickness: 1, // толщина полоски
+              color: Colors.grey, // цвет полоски
+              indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
+              endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
+            ),
+            // Add space before login button
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             // Login button
-            ElevatedButton(
+            CupertinoButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ChatPage(),
+                    builder: (context) => MyHomePage(),
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              color: Color.fromRGBO(162, 132, 94, 1.00),
               child: Text(
-                'Войти',
+                'Далее',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -203,7 +258,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Divider(
                       thickness: 1,
                       color: Colors.grey, // changed color to blueAccent
-                      indent: MediaQuery.of(context).size.width * 0.1,
+                      indent: 20,
                     ),
                   ),
                   Padding(
@@ -217,7 +272,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Divider(
                       thickness: 1,
                       color: Colors.grey, // changed color to blueAccent
-                      endIndent: MediaQuery.of(context).size.width * 0.1,
+                      endIndent: 20,
                     ),
                   ),
                 ],
@@ -228,62 +283,42 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.google),
+                  width: 100, // set the width to 40 pixels
+                  child: CupertinoButton(
+                    child: Icon(
+                      FontAwesomeIcons.google,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                     onPressed: () {
                       // Handle Google login
                     },
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.vk),
+                  width: 100, // set the width to 40 pixels
+                  child: CupertinoButton(
+                    child: Icon(
+                      FontAwesomeIcons.vk,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                     onPressed: () {
-                      // Handle Facebook login
+                      // Handle Google login
                     },
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3, // set the width to 40 pixels
-                  child: IconButton(
-                    icon: Icon(FontAwesomeIcons.yandex),
+                  width: 100, // set the width to 40 pixels
+                  child: CupertinoButton(
+                    child: Icon(
+                      FontAwesomeIcons.yandex,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                     onPressed: () {
-                      // Handle Yandex login
+                      // Handle Google login
                     },
                   ),
                 ),
               ],
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
-            Text(
-              'У вас нет аккаунта?',
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Theme.of(context).colorScheme.primary,
-                fontFamily: "Helvetica",
-              ),
-            ),
-            Container(
-              child: MaterialButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignupPage(),
-                    ),
-                  );
-                },
-                child: Text(
-                  'Зарегистрироваться?',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: "Helvetica",
-                    color: Theme.of(context).colorScheme.primary, // Use primary color from theme for text color
-                  ),
-                ),
-              ),
             ),
           ],
         ),

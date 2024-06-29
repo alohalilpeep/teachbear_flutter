@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:teachbear/pages/login_page.dart';
-import 'package:teachbear/pages/signup_page.dart';
+import 'package:teachbear/pages/login_sign_recov/login_page.dart';
+import 'package:teachbear/pages/login_sign_recov/signup_page.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -37,7 +37,7 @@ class StartPage extends StatelessWidget {
           SizedBox(height: MediaQuery.of(context).size.height*0.03),
           Column(
             children: [
-              ElevatedButton(
+              CupertinoButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -46,13 +46,15 @@ class StartPage extends StatelessWidget {
                     ),
                   );
                 },
-                style: ElevatedButton.styleFrom(
+                color: Color.fromRGBO(162, 132, 94, 1.00),
+                minSize: 50,
+                /*style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
                   minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                ),
+                ),*/
                 child: Text(
                   'Войти',
                   style: TextStyle(
@@ -64,7 +66,7 @@ class StartPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height*0.01),
-              ElevatedButton(
+              CupertinoButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -73,15 +75,6 @@ class StartPage extends StatelessWidget {
                     ),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  minimumSize: Size(350, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadowColor: Colors.transparent,
-                ),
                 child: Text(
                   'Зарегистрироваться',
                   style: TextStyle(

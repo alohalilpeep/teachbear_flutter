@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:teachbear/pages/pass_recovery_2.dart';
+import 'package:teachbear/pages/login_sign_recov/pass_recovery_2.dart';
 
 class PassRecovery1 extends StatelessWidget {
   const PassRecovery1({super.key});
@@ -88,7 +89,7 @@ class PassRecovery1 extends StatelessWidget {
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.4),
-            ElevatedButton(
+            CupertinoButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -97,13 +98,7 @@ class PassRecovery1 extends StatelessWidget {
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              color: Color.fromRGBO(162, 132, 94, 1.00),
               child: Text(
                 'Далее',
                 style: TextStyle(

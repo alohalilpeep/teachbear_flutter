@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teachbear/pages/chat_page.dart';
+
+import '../bottom_navigation_bar.dart';
 class PassRecovery3 extends StatefulWidget {
   @override
   _PassRecovery3 createState() => _PassRecovery3();
@@ -143,22 +146,16 @@ class _PassRecovery3 extends State<PassRecovery3> {
             // Add space before login button
             SizedBox(height: MediaQuery.of(context).size.height * 0.25),
             // Login button
-            ElevatedButton(
+            CupertinoButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ChatPage(),
+                    builder: (context) => MyHomePage(),
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(162, 132, 94, 1.00),
-                minimumSize: Size(MediaQuery.of(context).size.width * 0.8, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              color: Color.fromRGBO(162, 132, 94, 1.00),
               child: Text(
                 'Далее',
                 style: TextStyle(
@@ -170,12 +167,12 @@ class _PassRecovery3 extends State<PassRecovery3> {
               ),
             ),
             Container(
-              child: MaterialButton(
+              child: CupertinoButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ChatPage(),
+                      builder: (context) => MyHomePage(),
                     ),
                   );
                 },
