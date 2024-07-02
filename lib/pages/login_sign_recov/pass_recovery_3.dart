@@ -34,7 +34,7 @@ class _PassRecovery3 extends State<PassRecovery3> {
                   child: Text(
                     'Изменение\nпароля',
                     style: TextStyle(
-                      fontSize: 35.0,
+                      fontSize: 33.0,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Helvetica',
                       color: Color.fromRGBO(162, 132, 94, 1.00),
@@ -45,13 +45,6 @@ class _PassRecovery3 extends State<PassRecovery3> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            // Add space between title and input fields
-            // Email input field
-
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            // Add space between email and password input fields
 
             // Password input field
             SizedBox(
@@ -98,7 +91,7 @@ class _PassRecovery3 extends State<PassRecovery3> {
               indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            //SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(

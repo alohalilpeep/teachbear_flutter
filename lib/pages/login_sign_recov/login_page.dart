@@ -25,9 +25,8 @@ class _LoginPageState extends State<LoginPage> {
       body: Expanded(
         child: Column(
           children: [
-            // Login title
             Container(
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 1),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
@@ -45,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             // Add space between title and input fields
             // Email input field
             SizedBox(
@@ -255,7 +254,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             Text(
               'У вас нет аккаунта?',
               style: TextStyle(

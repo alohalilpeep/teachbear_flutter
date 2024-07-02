@@ -31,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 40),
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Зарегстрироваться',
                     style: TextStyle(
@@ -45,7 +45,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(
@@ -83,7 +83,7 @@ class _SignupPageState extends State<SignupPage> {
               indent: 40, // отступ слева
               endIndent: 40, // отступ справа
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            //SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             // Add space between title and input fields
             // Email input field
             SizedBox(
@@ -133,7 +133,7 @@ class _SignupPageState extends State<SignupPage> {
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
 
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            //SizedBox(height: MediaQuery.of(context).size.height * 0.001),
             // Add space between email and password input fields
 
             // Password input field
@@ -181,7 +181,7 @@ class _SignupPageState extends State<SignupPage> {
               indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            //SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: TextField(

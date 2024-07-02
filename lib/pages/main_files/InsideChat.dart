@@ -1,10 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/chatMessageModel.dart';
 
 class ChatDetailPage extends StatefulWidget {
-
-
   @override
   _ChatDetailPageState createState() => _ChatDetailPageState();
 }
@@ -19,40 +18,131 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
     ChatMessage(
         messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
+    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Hey Kriss, I am doing fine dude. wbu?",
+        messageType: "sender"),
+    ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
+    ChatMessage(
+        messageContent: "Is there any thing wrong?", messageType: "sender"),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? Color.fromRGBO(31, 31, 31, 1) // темная тема
+            : Colors.white,
         flexibleSpace: SafeArea(
           child: Container(
             padding: EdgeInsets.only(right: 16),
             child: Row(
               children: <Widget>[
-                IconButton(
+                CupertinoButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pop();
                   },
-                  icon: Icon(
+                  child: Icon(
                     Icons.arrow_back,
-                    color: Colors.black,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 SizedBox(
                   width: 2,
                 ),
-                CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "<https://randomuser.me/api/portraits/men/5.jpg>"),
-                  maxRadius: 20,
+                CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {
+                    // Добавьте здесь необходимую логику
+                  },
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      "https://randomuser.me/api/portraits/men/5.jpg",
+                    ),
+                    maxRadius: 20,
+                  ),
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 1,
                 ),
-                Expanded(
+                CupertinoButton(
+                  onPressed: () {},
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -62,20 +152,29 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Text(
-                        "Online",
+                      /*Text(
+                        "Typing...",
                         style: TextStyle(
                             color: Colors.grey.shade600, fontSize: 13),
-                      ),
+                      ),*/
                     ],
                   ),
                 ),
-                Icon(
-                  Icons.settings,
-                  color: Colors.black54,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.16,
+                ),
+                CupertinoButton(
+                  borderRadius: BorderRadius.circular(100),
+                  minSize: 1.0,
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                  color: Color.fromRGBO(162, 132, 94, 1.00),
+                  onPressed: () {
+                    // Действия, которые должны выполняться при нажатии на кнопку
+                  },
                 ),
               ],
             ),
@@ -84,27 +183,44 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       ),
       body: Stack(
         children: <Widget>[
-          ListView.builder(
-            itemCount: messages.length,
-            shrinkWrap: true,
-            padding: EdgeInsets.only(top: 10,bottom: 10),
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index){
-              return Container(
-                padding: EdgeInsets.only(left: 14,right: 14,top: 10,bottom: 10),
-                child: Align(
-                  alignment: (messages[index].messageType == "receiver"?Alignment.topLeft:Alignment.topRight),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: (messages[index].messageType  == "receiver"?Colors.grey.shade200:Colors.blue[200]),
+          SafeArea(
+            child: CupertinoScrollbar(
+              child: ListView.builder(
+                itemCount: messages.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                physics: AlwaysScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: EdgeInsets.only(
+                        left: 14, right: 14, top: 10, bottom: 10),
+                    child: Align(
+                      alignment: (messages[index].messageType == "receiver"
+                          ? Alignment.topLeft
+                          : Alignment.topRight),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: (messages[index].messageType == "receiver"
+                              ? Color.fromRGBO(162, 132, 94, 1.00)
+                              : Colors.grey.shade200),
+                        ),
+                        padding: EdgeInsets.all(16),
+                        child: Text(
+                          messages[index].messageContent,
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: (messages[index].messageType == "receiver"
+                                ? Colors.white
+                                : Colors.black),
+                          ),
+                        ),
+                      ),
                     ),
-                    padding: EdgeInsets.all(16),
-                    child: Text(messages[index].messageContent, style: TextStyle(fontSize: 15),),
-                  ),
-                ),
-              );
-            },
+                  );
+                },
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.bottomLeft,

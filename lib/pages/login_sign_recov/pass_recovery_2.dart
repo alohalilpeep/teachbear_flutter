@@ -28,7 +28,7 @@ class PassRecovery2 extends StatelessWidget {
                   child: Text(
                     'Восстановление\nпароля',
                     style: TextStyle(
-                      fontSize: 35.0,
+                      fontSize: 33.0,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Helvetica',
                       color: Color.fromRGBO(162, 132, 94, 1.00),
@@ -43,7 +43,7 @@ class PassRecovery2 extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 40, right: 40),
+                  padding: EdgeInsets.only(left: 40, right: 20),
                   child: Text(
                     'Введите код из письма, отправленного на govno@mail.ru',
                     textAlign: TextAlign.center,
@@ -108,7 +108,7 @@ class PassRecovery2 extends StatelessWidget {
               indent: MediaQuery.of(context).size.width * 0.13, // отступ слева
               endIndent: MediaQuery.of(context).size.width * 0.13, // отступ справа
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.315),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.2),
             CupertinoButton(
               onPressed: () {
                 Navigator.push(
